@@ -1,5 +1,6 @@
-// ignore_for_file: override_on_non_overriding_member, prefer_const_constructors_in_immutables, prefer_const_constructors, prefer_final_fields, unused_field, deprecated_member_use, unused_element, avoid_print
+// ignore_for_file: override_on_non_overriding_member, prefer_const_constructors_in_immutables, prefer_const_constructors, prefer_final_fields, unused_field, deprecated_member_use, unused_element, avoid_print, unused_import
 // ignore_for_file: prefer_const_literals_to_create_immutables
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:work3/widgets/destination_carousel.dart';
@@ -29,12 +30,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
             ),
-            SizedBox(
-              height: 20,
-            ),
-            SizedBox(
-              height: 20,
-            ),
+            Container(
+                child: TextField(
+                  decoration: InputDecoration(
+                      border: InputBorder.none, icon: Icon(Icons.search)),
+                ),
+                height: 45,
+                margin: EdgeInsets.all(20),
+                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 5),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  border: Border.all(color: Colors.black26),
+                )),
             DestinationCarousel(),
             SizedBox(
               height: 10,

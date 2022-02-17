@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors_in_immutables, prefer_const_constructors, use_key_in_widget_constructors
+// ignore_for_file: prefer_const_constructors_in_immutables, prefer_const_constructors, use_key_in_widget_constructors, sized_box_for_whitespace
 // ignore_for_file: prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -109,8 +109,33 @@ class _DestinationScreenState extends State<DestinationScreen> {
                   color: Colors.white70,
                   size: 30,
                 ),
-              )
+              ),
             ],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 370,
+              width: double.infinity,
+              child: Column(
+                children: [
+                  Expanded(
+                    child: SingleChildScrollView(
+                      child: Padding(
+                        padding: const EdgeInsets.all(24),
+                        child: Text(
+                          widget.destination.info,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           )
         ],
       ),

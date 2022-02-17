@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:work3/models/activity_model.dart';
 
 class Destination {
@@ -5,80 +7,53 @@ class Destination {
   String city;
   String country;
   String description;
-  List<Activity> activities;
+  String info;
 
-  Destination({
-    required this.imageUrl,
-    required this.city,
-    required this.country,
-    required this.description,
-    required this.activities,
-  });
+  Destination(
+      {required this.imageUrl,
+      required this.city,
+      required this.country,
+      required this.description,
+      required this.info});
 }
-
-List<Activity> activities = [
-  Activity(
-    imageUrl: 'assets/images/stmarksbasilica.jpg',
-    name: 'St. Mark\'s Basilica',
-    type: 'Sightseeing Tour',
-    startTimes: ['9:00 am', '11:00 am'],
-    rating: 5,
-    price: 30,
-  ),
-  Activity(
-    imageUrl: 'assets/images/gondola.jpg',
-    name: 'Walking Tour and Gonadola Ride',
-    type: 'Sightseeing Tour',
-    startTimes: ['11:00 pm', '1:00 pm'],
-    rating: 4,
-    price: 210,
-  ),
-  Activity(
-    imageUrl: 'assets/images/murano.jpg',
-    name: 'Murano and Burano Tour',
-    type: 'Sightseeing Tour',
-    startTimes: ['12:30 pm', '2:00 pm'],
-    rating: 3,
-    price: 125,
-  ),
-];
 
 List<Destination> destinations = [
   Destination(
-    imageUrl: 'assets/images/1.jpg',
-    city: 'Chang Arena ',
-    country: 'เมือง',
-    description:
-        'ชื่อเดิม ไอ-โมบาย สเตเดียม ตั้งอยู่ที่อำเภอเมือง สนามแห่งมีความจุ 32,600 ที่นั่ง',
-    activities: activities,
-  ),
+      imageUrl: 'assets/images/1.jpg',
+      city: 'Chang Arena ',
+      country: 'เมือง',
+      description:
+          'ชื่อเดิม ไอ-โมบาย สเตเดียม ตั้งอยู่ที่อำเภอเมือง สนามแห่งมีความจุ 32,600 ที่นั่ง',
+      info:
+          '        สนามนี้มีทั้งหมด 4 ชั้น โดยชั้นที่ 1 เป็นสำนักงานห้องแถลงข่าว ห้องสื่อมวลชน ร้านขายสินค้าที่ระลึก ห้องนักกีฬาทีมเหย้า-เยือน ห้องพักผู้ตัดสิน ห้องปฐมพยาบาล และห้องประชุม ชั้นที่ 2 จะเป็นห้องจัดเลี้ยงใหญ่จำนวน 400 ที่นั่ง ชั้นที่ 3 เป็นห้องวีไอพี 6 ห้อง และห้องจัดเลี้ยง 1 ห้อง และชั้นที่ 4 มีห้องวีไอพีจำนวน 15 ห้อง สนามแห่งนี้ยังมีการติดตั้งไฟส่องสว่างตามมาตรฐาน ของฟิลิปส์โดยมีค่าความสว่างของไฟอยู่ที่ 1,500 ลักซ์ ในส่วนอัฒจันทร์ฝั่งกองเชียร์นั้นมีเก้าอี้ที่นั่งเชียร์เป็นสีน้ำเงินเกือบหมด แต่จะใช้เก้าอี้สีขาวตรงที่มีคำว่า ธันเดอร์คาสเซิล และ บุรีรัมย์ มีหัวหน้ากองเชียร์คือ นางกรุณา ชิดชอบ เป็นแกนนำหลักในการเชียร์ ช้างอารีนา เคยใช้เป็นสถานที่จัดคอนเสิร์ตและกิจกรรมรื่นเริงครั้งใหญ่ในเทศกาลสงกรานต์ในปี พ.ศ. 2555 โดยการจัดของนายเนวิน ชิดชอบ ประธานสโมสร โดยมีศิลปินนักร้องมากมาย อาทิ โซระ อาโออิ, เอ็นเอส ยุน จี, ปีเตอร์ คอร์ป ไดเรนดัล, นูโว, ไมโคร, ปกรณ์ ลัม, บอดี้สแลม, คาราบาว, ลาบานูน, บิ๊กแอส, โลโซ เป็นต้นปลายปี พ.ศ. 2560 เมื่อกลุ่มสามารถคอร์ปอเรชั่น ได้ยุติตราสินค้าไอ-โมบาย ชื่อสนามจึงได้เปลี่ยนตามผู้สนับสนุนหลักของสโมสรอีกบริษัทหนึ่ง คือ ช้าง โดย บริษัท ไทยเบฟเวอเรจ จำกัด (มหาชน) ซึ่งสนามแข่งรถที่อยู่ในบริเวณใกล้เคียง ก็ใช้ชื่อตามตราสินค้านี้เช่นกัน'),
   Destination(
     imageUrl: 'assets/images/2.jpg',
     city: 'เขาพนมรุ้ง',
     country: 'เฉลิมพระเกียรติ',
     description: 'ห่างจากตัวเมืองบุรีรัมย์ลงมาทางทิศใต้ประมาณ 77 กิโลเมตร',
-    activities: activities,
+    info:
+        'อุทยานประวัติศาสตร์พนมรุ้ง หรือ ปราสาทหินพนมรุ้ง เป็นหนึ่งในปราสาทหินในกลุ่มราชมรรคา ตั้งอยู่ที่หมู่ที่ 2 บ้านดอนหนองแหน) ตำบลตาเป๊ก อำเภอเฉลิมพระเกียรติ ห่างจากตัวเมืองบุรีรัมย์ลงมาทางทิศใต้ประมาณ 77 กิโลเมตร ประกอบไปด้วยโบราณสถานสำคัญ ซึ่งตั้งอยู่บนยอดภูเขาไฟที่ดับสนิทแล้ว สูงประมาณ 200 เมตรจากพื้นราบ ประมาณ 350 เมตรจากระดับน้ำทะเลปานกลาง คำว่า พนมรุ้ง นั้น มาจากภาษาเขมร คำว่า วนํรุง แปลว่า ภูเขาใหญ่ปัจจุบัน ปราสาทหินพนมรุ้งกำลังอยู่ในเกณฑ์กำลังพิจารณาเป็นมรดกโลก เช่นเดียวกับ ปราสาทหินในกลุ่มราชมรรคา ปราสาทหินพนมรุ้งเป็นหนึ่งในปราสาทหินขอมของไทยที่มีชื่อเสียงมากที่สุด เป็นสถานที่ท่องเที่ยวที่สำคัญที่สุดแห่งหนึ่งของจังหวัดบุรีรัมย์ และถือเป็นสัญลักษณ์ที่สำคัญของจังหวัดบุรีรัมย์ รวมถึงเป็นภาพพื้นหลังตราสัญลักษณ์ของสโมสรฟุตบอลบุรีรัมย์ ยูไนเต็ดอีกด้วย',
   ),
   Destination(
-    imageUrl: 'assets/images/newdelhi.jpg',
-    city: 'New Delhi',
-    country: 'India',
-    description: 'Visit New Delhi for an amazing and unforgettable adventure.',
-    activities: activities,
-  ),
+      imageUrl: 'assets/images/newdelhi.jpg',
+      city: 'New Delhi',
+      country: 'India',
+      description:
+          'Visit New Delhi for an amazing and unforgettable adventure.',
+      info: '0'),
   Destination(
     imageUrl: 'assets/images/saopaulo.jpg',
     city: 'Sao Paulo',
     country: 'Brazil',
     description: 'Visit Sao Paulo for an amazing and unforgettable adventure.',
-    activities: activities,
+    info: '0',
   ),
   Destination(
     imageUrl: 'assets/images/newyork.jpg',
     city: 'New York City',
     country: 'United States',
     description: 'Visit New York for an amazing and unforgettable adventure.',
-    activities: activities,
+    info: '0',
   ),
   Destination(
     imageUrl: 'assets/images/1.jpg',
@@ -86,6 +61,6 @@ List<Destination> destinations = [
     country: 'Muang',
     description:
         'ชื่อเดิม ไอ-โมบาย สเตเดียม ตั้งอยู่ที่อำเภอเมือง สนามแห่งมีความจุ 32,600 ที่นั่ง',
-    activities: activities,
+    info: '0',
   ),
 ];

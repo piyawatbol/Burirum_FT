@@ -2,6 +2,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:work3/models/destination_model.dart';
 
 import 'package:work3/widgets/destination_carousel.dart';
 import 'package:work3/widgets/hotel_carousel.dart';
@@ -15,6 +16,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _currentTab = 0;
+  final controller = TextEditingController();
+  final destinationsearch = destinations;
 
   @override
   Widget build(BuildContext context) {
@@ -30,23 +33,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
             ),
-            Container(
-                child: TextField(
-                  decoration: InputDecoration(
-                      border: InputBorder.none, icon: Icon(Icons.search)),
-                ),
-                height: 45,
-                margin: EdgeInsets.all(20),
-                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 5),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  border: Border.all(color: Colors.black26),
-                )),
+            SizedBox(
+              height: 20,
+            ),
             DestinationCarousel(),
             SizedBox(
               height: 10,
             ),
-            HotelCarousel(),
           ],
         ),
       ),

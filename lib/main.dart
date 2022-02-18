@@ -51,15 +51,9 @@ class _HomeState extends State<Home> {
           BottomNavigationBarItem(
               title: SizedBox.shrink(),
               icon: Icon(
-                Icons.account_tree,
+                Icons.account_circle,
                 size: 30,
               )),
-          BottomNavigationBarItem(
-              title: SizedBox.shrink(),
-              icon: Icon(
-                Icons.account_tree,
-                size: 30,
-              ))
         ],
       ),
       body: tabs[_currentTab],

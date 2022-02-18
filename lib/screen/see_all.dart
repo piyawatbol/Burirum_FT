@@ -1,5 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables, avoid_unnecessary_containers, unused_local_variable, sized_box_for_whitespace
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:work3/models/destination_model.dart';
 import 'package:work3/widgets/destination_screen.dart';
@@ -12,27 +12,35 @@ class SeeAll extends StatefulWidget {
 }
 
 class _SeeAllState extends State<SeeAll> {
+  final controller = TextEditingController();
+  final destinationsearch = destinations;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Column(
           children: [
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 13, top: 6, bottom: 8),
-                  child: IconButton(
-                      color: Colors.grey.shade600,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  IconButton(
+                      color: Colors.grey.shade500,
                       onPressed: () {
                         Navigator.pop(context);
                       },
                       icon: Icon(
                         Icons.arrow_back_ios_new,
-                        size: 32,
+                        size: 28,
                       )),
-                )
-              ],
+                  Container(
+                    width: 320,
+                    child: CupertinoSearchTextField(
+                      onChanged: _search,
+                    ),
+                  ),
+                ],
+              ),
             ),
             Expanded(
               child: ListView.builder(
@@ -99,7 +107,7 @@ class _SeeAllState extends State<SeeAll> {
                                                   letterSpacing: 1.2),
                                             ),
                                             SizedBox(
-                                              height: 24,
+                                              height: 15,
                                             ),
                                             Text(destination.description,
                                                 style: TextStyle(
@@ -124,5 +132,17 @@ class _SeeAllState extends State<SeeAll> {
         ),
       ),
     );
+  }
+
+  void _search(String query) {
+    final suggestions = destinationsearch.where((element) {
+      final city = element.city.toLowerCase();
+      final input = query.toLowerCase();
+      return city.contains(input);
+    }).toList();
+
+    setState(() {
+      destinations = suggestions;
+    });
   }
 }

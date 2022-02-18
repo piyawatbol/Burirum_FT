@@ -69,7 +69,7 @@ class DestinationCarousel extends StatelessWidget {
           height: 300,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: destinations.length,
+            itemCount: 5,
             itemBuilder: (BuildContext context, int index) {
               Destination destination = destinations[index];
               return GestureDetector(
@@ -108,7 +108,8 @@ class DestinationCarousel extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(destination.description,
-                                    style: TextStyle(color: Colors.grey)),
+                                    style: TextStyle(
+                                        color: Colors.grey, fontSize: 15)),
                               ],
                             ),
                           ),
@@ -139,18 +140,21 @@ class DestinationCarousel extends StatelessWidget {
                               ),
                             ),
                             Positioned(
-                              left: 10,
+                              left: 6,
                               bottom: 10,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
-                                  Text(
-                                    destination.city,
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 24,
-                                        fontWeight: FontWeight.w600,
-                                        letterSpacing: 1.2),
+                                  Container(
+                                    width: 160,
+                                    child: Text(
+                                      destination.city,
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 21,
+                                          fontWeight: FontWeight.w600,
+                                          letterSpacing: 1.2),
+                                    ),
                                   ),
                                   Row(
                                     children: [

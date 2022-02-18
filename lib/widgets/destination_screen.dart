@@ -55,16 +55,6 @@ class _DestinationScreenState extends State<DestinationScreen> {
                       iconSize: 30,
                       color: Colors.white,
                     ),
-                    Row(
-                      children: [
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.search),
-                          iconSize: 30,
-                          color: Colors.white,
-                        ),
-                      ],
-                    )
                   ],
                 ),
               ),
@@ -74,13 +64,16 @@ class _DestinationScreenState extends State<DestinationScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(
-                      widget.destination.city,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 35,
-                          fontWeight: FontWeight.w600,
-                          letterSpacing: 1.2),
+                    Container(
+                      width: 320,
+                      child: Text(
+                        widget.destination.city,
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 35,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 1.2),
+                      ),
                     ),
                     Row(
                       children: [

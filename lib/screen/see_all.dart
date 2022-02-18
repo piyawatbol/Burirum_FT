@@ -82,15 +82,12 @@ class _SeeAllState extends State<SeeAll> {
                                     SizedBox(
                                       width: 9,
                                     ),
-                                    Hero(
-                                      tag: destination.imageUrl,
-                                      child: ClipRRect(
-                                          child: Image(
-                                              height: 210,
-                                              width: 200,
-                                              image: AssetImage(
-                                                  destination.imageUrl))),
-                                    ),
+                                    ClipRRect(
+                                        child: Image(
+                                            height: 210,
+                                            width: 200,
+                                            image: AssetImage(
+                                                destination.imageUrl))),
                                     Container(
                                       height: 200,
                                       width: 160,

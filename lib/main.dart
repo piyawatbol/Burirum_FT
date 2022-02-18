@@ -43,13 +43,13 @@ class _HomeState extends State<Home> {
         currentIndex: _currentTab,
         items: [
           BottomNavigationBarItem(
-              title: SizedBox.shrink(),
+              label: 'home',
               icon: Icon(
                 Icons.home,
                 size: 30,
               )),
           BottomNavigationBarItem(
-              title: SizedBox.shrink(),
+              label: 'profile',
               icon: Icon(
                 Icons.account_circle,
                 size: 30,

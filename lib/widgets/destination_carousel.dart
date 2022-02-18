@@ -2,6 +2,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:work3/models/destination_model.dart';
 import 'package:work3/screen/see_all.dart';
 import 'package:work3/widgets/destination_screen.dart';
@@ -22,10 +23,12 @@ class DestinationCarousel extends StatelessWidget {
                 children: [
                   Text(
                     'Poppular',
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 1.5,
+                    style: GoogleFonts.abrilFatface(
+                      textStyle: TextStyle(
+                        fontSize: 29,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.5,
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -33,7 +36,7 @@ class DestinationCarousel extends StatelessWidget {
                   ),
                   Icon(
                     Icons.star,
-                    size: 35,
+                    size: 42,
                     color: Colors.yellow.shade700,
                   ),
                 ],
@@ -49,13 +52,16 @@ class DestinationCarousel extends StatelessWidget {
                         }),
                   );
                 },
-                child: Text(
-                  'See All',
-                  style: TextStyle(
-                    color: Colors.blue.shade600,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 1.0,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 25, top: 8),
+                  child: Text(
+                    'See All',
+                    style: TextStyle(
+                      color: Colors.blue.shade600,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 1.0,
+                    ),
                   ),
                 ),
               )
@@ -69,7 +75,7 @@ class DestinationCarousel extends StatelessWidget {
           height: 300,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: 5,
+            itemCount: 7,
             itemBuilder: (BuildContext context, int index) {
               Destination destination = destinations[index];
               return GestureDetector(
@@ -147,14 +153,14 @@ class DestinationCarousel extends StatelessWidget {
                                 children: <Widget>[
                                   Container(
                                     width: 160,
-                                    child: Text(
-                                      destination.city,
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 21,
-                                          fontWeight: FontWeight.w600,
-                                          letterSpacing: 1.2),
-                                    ),
+                                    child: Text(destination.city,
+                                        style: GoogleFonts.pattaya(
+                                          textStyle: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 21,
+                                              fontWeight: FontWeight.w600,
+                                              letterSpacing: 1.2),
+                                        )),
                                   ),
                                   Row(
                                     children: [
@@ -166,10 +172,11 @@ class DestinationCarousel extends StatelessWidget {
                                       SizedBox(
                                         width: 5,
                                       ),
-                                      Text(
-                                        destination.country,
-                                        style: TextStyle(color: Colors.white),
-                                      ),
+                                      Text(destination.country,
+                                          style: GoogleFonts.mali(
+                                            textStyle:
+                                                TextStyle(color: Colors.white),
+                                          )),
                                     ],
                                   ),
                                 ],

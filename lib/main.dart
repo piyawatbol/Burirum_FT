@@ -29,7 +29,10 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _currentTab = 0;
-  final tabs = [HomeScreen(), Screen2(), Screen2()];
+  final tabs = [
+    HomeScreen(),
+    Screen2(),
+  ];
 
   @override
   Widget build(BuildContext context) {

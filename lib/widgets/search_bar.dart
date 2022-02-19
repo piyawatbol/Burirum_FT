@@ -2,6 +2,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 import 'package:work3/models/destination_model.dart';
+import 'package:work3/screen/see_all.dart';
 
 class SearchBar extends StatefulWidget {
   SearchBar({Key? key}) : super(key: key);
@@ -25,43 +26,45 @@ class _SearchBarState extends State<SearchBar> {
               border: Border.all(
                 color: Colors.white24,
               )),
-          child: Row(
-            children: [
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 30),
-                  child: TextField(
-                    onChanged: _search,
-                    decoration: InputDecoration(
-                        border: InputBorder.none, hintText: 'Search'),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (BuildContext context) {
+                  return SeeAll();
+                }),
+              );
+            },
+            child: Row(
+              children: [
+                Expanded(
+                  child: Padding(
+                      padding: const EdgeInsets.only(left: 30),
+                      child: Container(
+                        height: 39,
+                        child: Padding(
+                          padding: const EdgeInsets.all(9),
+                          child: Text(
+                            'Search',
+                            style: TextStyle(fontSize: 18, color: Colors.grey),
+                          ),
+                        ),
+                      )),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Container(
+                    height: 30,
+                    child: Image.asset(
+                      "assets/images/search.png",
+                    ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                  height: 30,
-                  child: Image.asset(
-                    "assets/images/search.png",
-                  ),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
     );
-  }
-
-  void _search(String query) {
-    final suggestions = destinationsearch.where((element) {
-      final city = element.city.toLowerCase();
-      final input = query.toLowerCase();
-      return city.contains(input);
-    }).toList();
-
-    setState(() {
-      destinations = suggestions;
-    });
   }
 }

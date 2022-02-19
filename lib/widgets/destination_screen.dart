@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors_in_immutables, prefer_const_constructors, use_key_in_widget_constructors, sized_box_for_whitespace
+// ignore_for_file: prefer_const_constructors_in_immutables, prefer_const_constructors, use_key_in_widget_constructors, sized_box_for_whitespace, avoid_unnecessary_containers, unused_local_variable
 // ignore_for_file: prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -111,15 +111,80 @@ class _DestinationScreenState extends State<DestinationScreen> {
             width: double.infinity,
             child: Column(
               children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(children: [
+                    Container(
+                      width: 360,
+                      height: 100,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 1,
+                        itemBuilder: (BuildContext context, int index) {
+                          Destination destination = destinations[index];
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 3),
+                                  child: Image.asset(
+                                    widget.destination.imginfo,
+                                    height: 150,
+                                    width: 150,
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 3),
+                                  child: Image.asset(
+                                    widget.destination.imginfo2,
+                                    height: 150,
+                                    width: 150,
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 3),
+                                  child: Image.asset(
+                                    widget.destination.imginfo3,
+                                    height: 150,
+                                    width: 150,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      ),
+                    )
+                  ]),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 30, top: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        "รายละเอียด",
+                        style: TextStyle(fontSize: 20),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
                 Expanded(
                   child: SingleChildScrollView(
                     child: Padding(
-                      padding: const EdgeInsets.all(35),
+                      padding: const EdgeInsets.symmetric(horizontal: 55),
                       child: Text(widget.destination.info,
                           style: GoogleFonts.sriracha(
                             textStyle: TextStyle(
                               color: Colors.black,
-                              fontSize: 22,
+                              fontSize: 17,
                             ),
                           )),
                     ),

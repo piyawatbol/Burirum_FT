@@ -7,8 +7,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:work3/models/destination_model.dart';
-import 'package:work3/screen/menu_widget.dart';
-
+import 'package:work3/screen/see_all.dart';
+import 'package:work3/widgets/scroll_home.dart';
 import 'package:work3/widgets/destination_carousel.dart';
 import 'package:work3/widgets/drawer_navigation2.dart';
 import 'package:work3/widgets/hotel_carousel.dart';
@@ -70,10 +70,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 10,
                 ),
                 DestinationCarousel(),
-                HotelCarousel(),
-                SizedBox(
-                  height: 10,
+                Padding(
+                  padding: const EdgeInsets.only(left: 23),
+                  child: Text(
+                    "สถานที่ท่องเที่ยว",
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  ),
                 ),
+                SizedBox(
+                  height: 15,
+                ),
+                ScrollHome()
               ],
             ),
           ),

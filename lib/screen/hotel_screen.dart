@@ -15,13 +15,21 @@ class _HotelScreenState extends State<HotelScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+      ),
       body: Stack(children: [
-        Container(
-          height: 250,
-          width: double.infinity,
-          child: Image(
-              image: AssetImage(widget.hotel.imageUrl), fit: BoxFit.cover),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            height: 250,
+            width: double.infinity,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(35),
+              child: Image(
+                  image: AssetImage(widget.hotel.imageUrl), fit: BoxFit.cover),
+            ),
+          ),
         ),
       ]),
     );

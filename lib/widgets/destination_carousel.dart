@@ -21,23 +21,24 @@ class DestinationCarousel extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Text(
-                    'Poppular',
-                    style: GoogleFonts.abrilFatface(
-                      textStyle: TextStyle(
-                        fontSize: 29,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 1.5,
-                      ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 1, top: 10),
+                    child: Text(
+                      'Poppular',
+                      style:
+                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                     ),
                   ),
                   SizedBox(
                     width: 6,
                   ),
-                  Icon(
-                    Icons.star,
-                    size: 42,
-                    color: Colors.yellow.shade700,
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Icon(
+                      Icons.star,
+                      size: 42,
+                      color: Colors.yellow.shade700,
+                    ),
                   ),
                 ],
               ),

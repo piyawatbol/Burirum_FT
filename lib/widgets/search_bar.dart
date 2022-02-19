@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors_in_immutables, prefer_const_constructors, avoid_unnecessary_containers, sized_box_for_whitespace
 // ignore_for_file: prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
-import 'package:work3/models/destination_model.dart';
+
 import 'package:work3/screen/see_all.dart';
 
 class SearchBar extends StatefulWidget {
@@ -13,7 +13,6 @@ class SearchBar extends StatefulWidget {
 
 class _SearchBarState extends State<SearchBar> {
   final controller = TextEditingController();
-  final destinationsearch = destinations;
   @override
   Widget build(BuildContext context) {
     return Container(

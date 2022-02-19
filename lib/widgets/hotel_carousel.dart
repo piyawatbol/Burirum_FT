@@ -2,12 +2,18 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 
-
 import 'package:work3/models/hotel_model.dart';
 import 'package:work3/screen/hotel_screen.dart';
 
 class HotelCarousel extends StatelessWidget {
   const HotelCarousel({Key? key}) : super(key: key);
+  Text _buildRatingStars(int rating) {
+    String stars = '';
+    for (int i = 0; i < rating; i++) {
+      stars += '⭐';
+    }
+    return Text(stars);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +103,10 @@ class HotelCarousel extends StatelessWidget {
                                           fontWeight: FontWeight.bold),
                                       textAlign: TextAlign.center,
                                     ),
-                                    
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 10),
+                                      child: _buildRatingStars(hotel.rating),
+                                    )
                                   ],
                                 ),
                               ),

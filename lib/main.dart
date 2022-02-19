@@ -46,15 +46,15 @@ class _HomeState extends State<Home> {
         currentIndex: _currentTab,
         items: [
           BottomNavigationBarItem(
-              label: 'home',
+              label: 'Home',
               icon: Icon(
                 Icons.home,
                 size: 30,
               )),
           BottomNavigationBarItem(
-              label: 'profile',
+              label: 'Hotel',
               icon: Icon(
-                Icons.account_circle,
+                Icons.hotel_rounded,
                 size: 30,
               )),
         ],

@@ -12,6 +12,7 @@ class SeeAll extends StatefulWidget {
 }
 
 class _SeeAllState extends State<SeeAll> {
+  final formKey = GlobalKey<FormState>();
   final controller = TextEditingController();
   final destinationsearch = destinations;
   @override
@@ -36,6 +37,7 @@ class _SeeAllState extends State<SeeAll> {
                   Container(
                     width: 320,
                     child: CupertinoSearchTextField(
+                      controller: controller,
                       onChanged: _search,
                     ),
                   ),

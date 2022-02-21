@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
+
 import 'package:work3/screen/see_all.dart';
+import 'package:work3/screen/see_all2.dart';
 
 class DrawerNavagation2 extends StatelessWidget {
   const DrawerNavagation2({Key? key}) : super(key: key);
@@ -35,10 +37,10 @@ class DrawerNavagation2 extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(
-              Icons.favorite,
+              Icons.home,
               color: color,
             ),
-            title: Text('See All'),
+            title: Text('Home'),
             onTap: () {
               Navigator.push(
                 context,
@@ -52,11 +54,20 @@ class DrawerNavagation2 extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(
-              Icons.people,
+              Icons.hotel,
               color: color,
             ),
-            title: Text('Friends'),
-            onTap: () {},
+            title: Text('Hotel'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    fullscreenDialog: true,
+                    builder: (BuildContext context) {
+                      return SeeAll2();
+                    }),
+              );
+            },
           ),
           ListTile(
             leading: Icon(

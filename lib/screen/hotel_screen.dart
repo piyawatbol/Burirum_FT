@@ -30,7 +30,7 @@ class _HotelScreenState extends State<HotelScreen> {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(Icons.arrow_back),
+          icon: Icon(Icons.arrow_back_ios_new),
           iconSize: 30,
           color: Colors.black,
         ),

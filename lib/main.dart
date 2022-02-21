@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables, deprecated_member_use
+// ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables, deprecated_member_use, avoid_web_libraries_in_flutter
 // ignore_for_file: prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 import 'package:work3/screen/home_screen.dart';
@@ -29,10 +29,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _currentTab = 0;
-  final tabs = [
-    HomeScreen(),
-    Screen2(),
-  ];
+  final tabs = [HomeScreen(), Screen2()];
 
   @override
   Widget build(BuildContext context) {

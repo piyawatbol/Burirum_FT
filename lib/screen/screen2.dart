@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:work3/widgets/drawer_navigation2.dart';
 import 'package:work3/widgets/hotel_carousel.dart';
-import 'package:work3/widgets/search_bar.dart';
+import 'package:work3/widgets/search_bar2.dart';
 
 class Screen2 extends StatelessWidget {
   const Screen2({Key? key}) : super(key: key);
@@ -51,7 +51,7 @@ class Screen2 extends StatelessWidget {
                 SizedBox(
                   height: 10,
                 ),
-                SearchBar(),
+                SearchBar2(),
                 SizedBox(
                   height: 10,
                 ),

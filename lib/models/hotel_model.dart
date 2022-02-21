@@ -13,7 +13,7 @@ class Hotel {
       required this.rating});
 }
 
-final List<Hotel> hotels = [
+List<Hotel> hotels = [
   Hotel(
     imageUrl: 'assets/images/h1.jpg',
     name: 'อมารี บุรีรัมย์ ',

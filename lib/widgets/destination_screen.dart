@@ -107,7 +107,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
             ],
           ),
           Container(
-            height: 370,
+            height: 382,
             width: double.infinity,
             child: Column(
               children: [
@@ -162,7 +162,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                   ]),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 30, top: 10),
+                  padding: const EdgeInsets.only(left: 30, top: 5),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -174,17 +174,17 @@ class _DestinationScreenState extends State<DestinationScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 Expanded(
                   child: SingleChildScrollView(
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 55),
+                      padding: const EdgeInsets.symmetric(horizontal: 35),
                       child: Text(widget.destination.info,
                           style: GoogleFonts.sriracha(
                             textStyle: TextStyle(
                               color: Colors.black,
-                              fontSize: 17,
+                              fontSize: 18,
                             ),
                           )),
                     ),

@@ -2,6 +2,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 import 'package:work3/screen/home_screen.dart';
+import 'package:work3/screen/login_screen.dart';
 import 'package:work3/screen/screen2.dart';
 
 void main() {
@@ -15,10 +16,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: LoginScreen(),
     );
   }
 }
+
 
 class Home extends StatefulWidget {
   Home({Key? key}) : super(key: key);

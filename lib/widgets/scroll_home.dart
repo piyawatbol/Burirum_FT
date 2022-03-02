@@ -36,10 +36,10 @@ class ScrollHome extends StatelessWidget {
                     decoration: BoxDecoration(
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.grey.withOpacity(0.2),
+                            color: Colors.grey.withOpacity(0.4),
                             spreadRadius: 1,
-                            blurRadius: 5,
-                            offset: Offset(1, 4),
+                            blurRadius: 10,
+                            offset: Offset(5, 5),
                           )
                         ],
                         color: Colors.white,
@@ -47,17 +47,20 @@ class ScrollHome extends StatelessWidget {
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: Container(
-                                  width: 120,
-                                  child: Image.asset(destination.imageUrl))),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 11),
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8),
+                                child: Container(
+                                    width: 120,
+                                    child: Image.asset(destination.imageUrl))),
+                          ),
                           Padding(
                             padding: const EdgeInsets.only(right: 25),
                             child: Text(destination.city,
                                 style: GoogleFonts.sarabun(
                                   textStyle: TextStyle(
-                                      fontSize: 20,
+                                      fontSize: 19,
                                       fontWeight: FontWeight.w400),
                                 )),
                           )

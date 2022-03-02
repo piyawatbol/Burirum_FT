@@ -15,7 +15,7 @@ class Screen2 extends StatelessWidget {
     return Scaffold(
       drawer: DrawerNavagation2(),
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.grey.shade500,
         elevation: 0,
         leading: Builder(
           builder: (BuildContext context) {
@@ -28,6 +28,13 @@ class Screen2 extends StatelessWidget {
                 ));
           },
         ),
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(5),
+          child: SizedBox(),
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(18),
+        ),
       ),
       body: Stack(
         children: [
@@ -35,12 +42,12 @@ class Screen2 extends StatelessWidget {
             child: ListView(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 160, top: 10),
+                  padding: const EdgeInsets.only(left: 155, top: 10),
                   child: Text(
                     "Hotel",
                     style: GoogleFonts.anton(
                         textStyle: TextStyle(
-                      fontSize: 38,
+                      fontSize: 50,
                       fontWeight: FontWeight.bold,
                     )),
                   ),

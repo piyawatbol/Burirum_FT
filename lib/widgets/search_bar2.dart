@@ -19,7 +19,7 @@ class _SearchBar2State extends State<SearchBar2> {
         padding: const EdgeInsets.symmetric(horizontal: 25),
         child: Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(25),
               color: Colors.grey.shade200,
               border: Border.all(
                 color: Colors.white24,

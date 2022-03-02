@@ -38,7 +38,6 @@ class _SeeAllState extends State<SeeAll> {
                   Container(
                     width: 330,
                     child: CupertinoSearchTextField(
-                      autofocus: true,
                       controller: controller,
                       onChanged: _search,
                     ),
@@ -63,7 +62,7 @@ class _SeeAllState extends State<SeeAll> {
                       children: [
                         Container(
                           margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
-                          height: 220,
+                          height: 185,
                           width: double.infinity,
                           decoration: BoxDecoration(
                               boxShadow: [

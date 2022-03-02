@@ -22,61 +22,39 @@ class DestinationCarousel extends StatelessWidget {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 1, top: 10),
-                    child: Text(
-                      'Poppular',
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                    ),
+                    padding: const EdgeInsets.only(left: 5, top: 10),
+                    child: Text('Top',
+                        style: GoogleFonts.courgette(
+                          textStyle: TextStyle(
+                              fontSize: 29, fontWeight: FontWeight.bold),
+                        )),
                   ),
                   SizedBox(
                     width: 6,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 10),
+                    padding: const EdgeInsets.only(
+                      top: 10,
+                    ),
                     child: Icon(
                       Icons.star,
-                      size: 42,
+                      size: 35,
                       color: Colors.yellow.shade700,
                     ),
                   ),
                 ],
               ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        fullscreenDialog: true,
-                        builder: (BuildContext context) {
-                          return SeeAll();
-                        }),
-                  );
-                },
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 25, top: 8),
-                  child: Text(
-                    'See All',
-                    style: TextStyle(
-                      color: Colors.blue.shade600,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: 1.0,
-                    ),
-                  ),
-                ),
-              )
             ],
           ),
         ),
         SizedBox(
-          height: 10,
+          height: 7,
         ),
         Container(
           height: 300,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: 5,
+            itemCount: 7,
             itemBuilder: (BuildContext context, int index) {
               Destination destination = destinations[index];
               return GestureDetector(

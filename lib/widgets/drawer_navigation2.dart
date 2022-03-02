@@ -79,6 +79,7 @@ class DrawerNavagation2 extends StatelessWidget {
             ),
             title: Text('Log Out'),
             onTap: () {
+              FirebaseAuth.instance.signOut();
               Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (BuildContext context) {
                 return LoginScreen();

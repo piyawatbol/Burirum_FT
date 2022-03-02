@@ -45,7 +45,6 @@ class _SeeAll2State extends State<SeeAll2> {
                   Container(
                     width: 320,
                     child: CupertinoSearchTextField(
-                      autofocus: true,
                       controller: controller,
                       onChanged: _search,
                     ),
@@ -93,6 +92,7 @@ class _SeeAll2State extends State<SeeAll2> {
                                       width: 10,
                                     ),
                                     ClipRRect(
+                                        borderRadius: BorderRadius.circular(40),
                                         child: Image(
                                             height: 180,
                                             width: 180,

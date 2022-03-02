@@ -1,18 +1,26 @@
-// ignore_for_file: prefer_const_constructors, must_be_immutable, use_key_in_widget_constructors, avoid_print
-
+// ignore_for_file: prefer_const_constructors_in_immutables, prefer_const_constructors, avoid_print, empty_catches, unused_catch_clause
+// ignore_for_file: prefer_const_literals_to_create_immutables
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:form_field_validator/form_field_validator.dart';
-import 'package:work3/main.dart';
 import 'package:work3/models/profile.dart';
-import 'package:work3/screen/register.dart';
 
-class LoginScreen extends StatelessWidget {
+
+class RegisterScreen extends StatefulWidget {
+  RegisterScreen({Key? key}) : super(key: key);
+
+  @override
+  State<RegisterScreen> createState() => _RegisterScreenState();
+}
+
+class _RegisterScreenState extends State<RegisterScreen> {
   final formKey = GlobalKey<FormState>();
   Profile profile = Profile(email: '', password: '');
   final Future<FirebaseApp> firebase = Firebase.initializeApp();
+
+  get e => null;
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
@@ -27,7 +35,7 @@ class LoginScreen extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.done) {
           return Scaffold(
             appBar: AppBar(
-              title: Text('Login'),
+              title: Text('register'),
             ),
             body: Padding(
               padding: const EdgeInsets.all(25),
@@ -60,7 +68,7 @@ class LoginScreen extends StatelessWidget {
                       TextFormField(
                         validator: (str) {
                           if (str!.isEmpty) {
-                            return "กรุณาป้อนจำนวนเงิน";
+                            return "กรุณาใส่รหัสผ่าน";
                           }
                           if (double.parse(str) <= 6) {
                             return "กรุณาใช้รหัสผ่านมากกว่า 6 ตัวขึ้นไป";
@@ -75,41 +83,30 @@ class LoginScreen extends StatelessWidget {
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          child: Text("Login"),
+                          child: Text("register"),
                           onPressed: () async {
-                            formKey.currentState?.save();
-
                             if (formKey.currentState!.validate()) {
                               formKey.currentState?.save();
                               try {
                                 await FirebaseAuth.instance
-                                    .signInWithEmailAndPassword(
+                                    .createUserWithEmailAndPassword(
                                         email: profile.email,
                                         password: profile.password);
-                                formKey.currentState!.reset();
-                                Navigator.pushReplacement(context,
-                                    MaterialPageRoute(
-                                        builder: (BuildContext context) {
-                                  return Home();
-                                }));
-                              } on FirebaseAuthException catch (e) {
                                 Fluttertoast.showToast(
-                                    msg: e.message.toString(),
+                                    msg: "สร้างบัญชีเรียบร้อยแล้ว",
                                     gravity: ToastGravity.CENTER);
+                                formKey.currentState?.reset();
+                              } on FirebaseAuthException catch (e) {
+                                String message;
+                                if (e.code == 'email-already-in-use') {
+                                  message =
+                                      "มีอีเมลนี้เคยใช้แล้ว กรุณาใช้ อีเมล อื่น";
+                                  Fluttertoast.showToast(
+                                      msg: message,
+                                      gravity: ToastGravity.CENTER);
+                                }
                               }
                             }
-                          },
-                        ),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          child: Text('Register'),
-                          onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(
-                                builder: (BuildContext context) {
-                              return RegisterScreen();
-                            }));
                           },
                         ),
                       )

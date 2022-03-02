@@ -1,6 +1,8 @@
 // ignore_for_file: override_on_non_overriding_member, prefer_const_constructors_in_immutables, prefer_const_constructors, prefer_final_fields, unused_field, deprecated_member_use, unused_element, avoid_print, unused_import, avoid_unnecessary_containers, sized_box_for_whitespace
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
+import 'dart:ffi';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -26,10 +28,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       drawer: DrawerNavagation2(),
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.black87,
         elevation: 0,
         leading: Builder(
           builder: (BuildContext context) {
@@ -37,10 +40,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: () => Scaffold.of(context).openDrawer(),
                 icon: SvgPicture.asset(
                   'assets/images/menu.svg',
-                  width: 60,
-                  height: 60,
+                  width: 100,
+                  height: 100,
+                  color: Colors.white,
                 ));
           },
+        ),
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(5),
+          child: SizedBox(),
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(18),
         ),
       ),
       body: Stack(
@@ -49,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: ListView(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 26, top: 10),
+                  padding: const EdgeInsets.only(left: 34, top: 20),
                   child: Text(
                     "WELLCOME TO BURIRUM",
                     style: GoogleFonts.anton(
@@ -73,8 +84,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 Padding(
                   padding: const EdgeInsets.only(left: 23),
                   child: Text(
-                    "สถานที่ท่องเที่ยว",
-                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                    "สถานที่ท่องเที่ยวต่างๆ",
+                    style: GoogleFonts.sriracha(
+                        textStyle: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.w400)),
                   ),
                 ),
                 SizedBox(

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, file_names, avoid_unnecessary_containers, sized_box_for_whitespace, unused_local_variable
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:work3/models/destination_model.dart';
 import 'package:work3/widgets/destination_screen.dart';
 
@@ -30,7 +31,7 @@ class ScrollHome extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 6),
                   child: Container(
-                    height: 80,
+                    height: 90,
                     width: double.infinity,
                     decoration: BoxDecoration(
                         boxShadow: [
@@ -43,21 +44,24 @@ class ScrollHome extends StatelessWidget {
                         ],
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10)),
-                    child: Row(children: [
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: Container(
-                              width: 100,
-                              child: Image.asset(destination.imageUrl))),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 28),
-                        child: Text(
-                          destination.city,
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w600),
-                        ),
-                      )
-                    ]),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Container(
+                                  width: 120,
+                                  child: Image.asset(destination.imageUrl))),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 25),
+                            child: Text(destination.city,
+                                style: GoogleFonts.sarabun(
+                                  textStyle: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w400),
+                                )),
+                          )
+                        ]),
                   ),
                 ),
               );

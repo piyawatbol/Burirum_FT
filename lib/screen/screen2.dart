@@ -35,9 +35,9 @@ class Screen2 extends StatelessWidget {
             child: ListView(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 26, top: 10),
+                  padding: const EdgeInsets.only(left: 160, top: 10),
                   child: Text(
-                    "WELLCOME TO BURIRUM",
+                    "Hotel",
                     style: GoogleFonts.anton(
                         textStyle: TextStyle(
                       fontSize: 38,

@@ -24,15 +24,22 @@ class _HotelScreenState extends State<HotelScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
+        elevation: 5,
+        backgroundColor: Colors.grey.shade300,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
           },
           icon: Icon(Icons.arrow_back_ios_new),
           iconSize: 30,
-          color: Colors.black,
+          color: Colors.black54,
+        ),
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(5),
+          child: SizedBox(),
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
         ),
       ),
       body: Stack(children: [
@@ -41,8 +48,12 @@ class _HotelScreenState extends State<HotelScreen> {
             Container(
               height: 250,
               width: double.infinity,
-              child: Image(
-                  image: AssetImage(widget.hotel.imageUrl), fit: BoxFit.cover),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(30),
+                child: Image(
+                    image: AssetImage(widget.hotel.imageUrl),
+                    fit: BoxFit.cover),
+              ),
             ),
           ],
         ),
@@ -55,8 +66,8 @@ class _HotelScreenState extends State<HotelScreen> {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(35),
-                topRight: Radius.circular(35),
+                topLeft: Radius.circular(45),
+                topRight: Radius.circular(45),
               ),
             ),
             child: Container(

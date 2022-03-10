@@ -1,4 +1,4 @@
-// ignore_for_file: override_on_non_overriding_member, prefer_const_constructors_in_immutables, prefer_const_constructors, prefer_final_fields, unused_field, deprecated_member_use, unused_element, avoid_print, unused_import, avoid_unnecessary_containers, sized_box_for_whitespace
+// ignore_for_file: override_on_non_overriding_member, prefer_const_constructors_in_immutables, prefer_const_constructors, prefer_final_fields, unused_field, deprecated_member_use, unused_element, avoid_print, unused_import, avoid_unnecessary_containers, sized_box_for_whitespace, unused_local_variable
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'dart:ffi';

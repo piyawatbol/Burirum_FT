@@ -7,18 +7,16 @@ import 'package:work3/widgets/recipe_card.dart';
 
 // import 'package:work1/widgets/cardcustom.dart';
 
-class Home2 extends StatefulWidget {
-  Home2({Key? key}) : super(key: key);
+class Screen3 extends StatefulWidget {
+  Screen3({Key? key}) : super(key: key);
 
   @override
-  State<Home2> createState() => _Home2State();
+  State<Screen3> createState() => _Screen3State();
 }
 
-class _Home2State extends State<Home2> {
+class _Screen3State extends State<Screen3> {
   @override
   Widget build(BuildContext context) {
-    // double width = MediaQuery.of(context).size.width;
-    // double height = MediaQuery.of(context).size.height;
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
@@ -38,6 +36,13 @@ class _Home2State extends State<Home2> {
                 style: TextStyle(color: Colors.black),
               )
             ],
+          ),
+          bottom: PreferredSize(
+            preferredSize: Size.fromHeight(5),
+            child: SizedBox(),
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(18),
           ),
         ),
         body: ListView.builder(

@@ -46,7 +46,7 @@ class RecipeCard extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-            left: 5,
+            left: 4,
             top: 8,
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 5.0),

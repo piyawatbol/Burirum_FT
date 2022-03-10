@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, must_be_immutable, use_key_in_widget_constructors, avoid_print
+// ignore_for_file: prefer_const_constructors, must_be_immutable, use_key_in_widget_constructors, avoid_print, unnecessary_new
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -89,6 +89,14 @@ class LoginScreen extends StatelessWidget {
                           SizedBox(
                             width: double.infinity,
                             child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  elevation: 10,
+                                  shape: new RoundedRectangleBorder(
+                                    borderRadius:
+                                        new BorderRadius.circular(30.0),
+                                    side: BorderSide(color: Colors.blueAccent),
+                                  ),
+                                  primary: Colors.blueAccent.shade400),
                               child:
                                   Text("Login", style: TextStyle(fontSize: 20)),
                               onPressed: () async {
@@ -119,6 +127,14 @@ class LoginScreen extends StatelessWidget {
                           SizedBox(
                             width: double.infinity,
                             child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  elevation: 10,
+                                  shape: new RoundedRectangleBorder(
+                                    borderRadius:
+                                        new BorderRadius.circular(30.0),
+                                    side: BorderSide(color: Colors.red),
+                                  ),
+                                  primary: Color.fromRGBO(214, 0, 27, 1)),
                               child: Text(
                                 'Register',
                                 style: TextStyle(fontSize: 18),

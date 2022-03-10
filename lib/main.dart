@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables, deprecated_member_use, avoid_web_libraries_in_flutter, unused_import
 // ignore_for_file: prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
-import 'package:work3/screen/home2.dart';
+import 'package:work3/screen/screen3.dart';
 import 'package:work3/screen/home_screen.dart';
 import 'package:work3/screen/login_screen.dart';
 import 'package:work3/screen/screen2.dart';
@@ -31,7 +31,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _currentTab = 0;
-  final tabs = [HomeScreen(), Screen2(), Home2()];
+  final tabs = [HomeScreen(), Screen2(), Screen3()];
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,7 @@ class _HomeState extends State<Home> {
           BottomNavigationBarItem(
               label: 'Food',
               icon: Icon(
-                Icons.food_bank, 
+                Icons.food_bank,
                 size: 30,
               )),
         ],
